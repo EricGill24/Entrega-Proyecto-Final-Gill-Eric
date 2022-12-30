@@ -1,0 +1,103 @@
+@media (min-width: 600px){
+    .mainIndex{
+        @include display(grid);
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto auto auto auto auto auto auto;
+        grid-template-areas: 
+        "t1 t1 t1"
+        "img img datos"
+        "datos2 datos2 datos2"
+        "educacion educacion educacion"
+        "experiencia experiencia experiencia"
+        "software software software"
+        "idiomas idiomas idiomas";
+    }
+    .tittleDatos{
+        grid-area: t1;
+    }
+    .datosContain{
+        grid-area: datos;
+    }
+    .imgPerfil{
+        grid-area: img;
+    }
+    .subtittle{
+        grid-area: sub1;
+    }
+    .objetivosContainer{
+        grid-area: datos2;
+    }
+    .eduSection{
+        grid-area: educacion;
+    }
+    .expSection{
+        grid-area: experiencia;
+    }
+    .sofSection{
+        grid-area: software;
+    }
+    .idiSection{
+        grid-area: idiomas;
+    }
+}
+@media (min-width: 1024px){
+    .navbar{
+        display: $display;
+    }
+    .logo{
+        @include display(flex);
+        position: fixed;
+        img{
+            height: 150px;
+            width: 150px;
+            @include sizes (150px, 150px)
+        }
+        :hover{
+            animation: rotacion 2s;
+        }
+    }
+    @keyframes rotacion{
+        50%{
+            transform: rotate(360deg);
+        }
+    }
+    .sectionNav{
+        @include display(flex);
+        margin-bottom: 10%;
+        nav{
+            @include display(flex);
+            text-align: right;
+            margin-left: auto;
+            margin-right: 2rem;
+            background-color: rgba(0, 0, 0, 0.418);
+            height: 50px;
+            ul{
+                list-style-type: none;
+                text-align: center;
+                li{
+                    @include display(inline-block);
+                    position: relative;
+                    margin-left: 25px;
+                    margin-right: 25px;
+                    padding-top: 15px;
+                    font-size: 20px;
+                    transition-property:all;
+                    transition: all;
+                    :hover{
+                        transform: scale(1);
+                        font-size: x-large;
+                    }
+                    a{
+                        text-decoration: none;
+                        font-family: 'Roboto', sans-serif ;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+    .imgconteiner img{
+        width: 50%;
+    }
+    
+}
